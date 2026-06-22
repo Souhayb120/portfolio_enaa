@@ -1,12 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>My portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="styles/style.css">
+
+  <title>Souhayb Hadi — Portfolio</title>
+
 </head>
 <body>
-  
+
+  <nav>
+    <div class="logo">SH.</div>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-links">
+      <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+      <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+      <li><a href="#education" onclick="closeMenu()">Education</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <div class="hero">
+    <div class="profile-pic">
+   
+      <img src="styles/images/Gemini_Generated_Image_z22bmz22bmz22bmz.png" alt="">
+    </div>
+    <div class="hero-text">
+      <p class="tag">Full-Stack Developer · Beni Mellal, Morocco</p>
+      <h1>Hi, I'm <span>Souhayb</span>.<br>I build backends that hold.</h1>
+      <p>
+        Full-Stack developer focused on Java & Spring Boot. I design and secure REST APIs,
+        work with MySQL, and build clean frontends. Currently training at ENAA and looking
+        for a project where I can bring real value from day one.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn filled">See my work</a>
+        <a href="mailto:souhaybhadi06@gmail.com" class="btn">Get in touch</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>What I work with</h2>
+    <div class="skills-grid">
+      <div class="skill-box fade-in">
+        <h3>Languages</h3>
+        <p>Java, JavaScript</p>
+      </div>
+      <div class="skill-box fade-in">
+        <h3>Back-end</h3>
+        <p>Spring Boot, Spring Security, REST API, JWT, Spring MVC, Hibernate / JPA</p>
+      </div>
+      <div class="skill-box fade-in">
+        <h3>Front-end</h3>
+        <p>HTML5, CSS3, JavaScript DOM, React, Tailwind CSS</p>
+      </div>
+      <div class="skill-box fade-in">
+        <h3>Databases</h3>
+        <p>MySQL, JPA, Hibernate</p>
+      </div>
+      <div class="skill-box fade-in">
+        <h3>DevOps & Tools</h3>
+        <p>Docker, GitHub Actions, Git, Postman, Maven, IntelliJ IDEA</p>
+      </div>
+      <div class="skill-box fade-in">
+        <h3>Other</h3>
+        <p>Figma, Trello, Swagger, Unit Testing</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-card fade-in">
+      <h3>HealthFlow — Medical Management System</h3>
+      <p>
+        A hospital management app to track and organize medical operations between patients,
+        doctors, and care staff. Includes modules for patient management, doctor records,
+        and appointment scheduling.
+      </p>
+      <p class="stack">Spring Boot · Spring Security · MySQL · Flyway · Docker</p>
+      <a href="https://github.com/ENAA-School-Student/HealthCare.git" target="_blank">View on GitHub →</a>
+    </div>
+
+    <div class="project-card fade-in">
+      <h3>FleetFlow — Fleet & Delivery Management</h3>
+      <p>
+        A fleet management app to organize and track deliveries by linking clients,
+        drivers, and vehicles. Covers client management, vehicles, drivers, and delivery tracking.
+      </p>
+      <p class="stack">Spring Boot · MySQL · Flyway · Docker</p>
+      <a href="https://github.com/Souhayb120/FleetFlow.git" target="_blank">View on GitHub →</a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="edu-item fade-in">
+      <p class="date">2025 – Present</p>
+      <h3>Full Stack Developer</h3>
+      <p class="school">École Numérique Ahmed El Hansali (ENAA) — Beni Mellal</p>
+    </div>
+
+    <div class="edu-item fade-in">
+      <p class="date">2022 – 2024</p>
+      <h3>Specialized Technician · Computer Development</h3>
+      <p class="school">OFPPT Institut BillGates — Beni Mellal</p>
+    </div>
+
+    <div class="cert-box fade-in">
+      <span class="cert-name">Git & GitHub — 365 Data Science</span>
+      <span class="cert-date">Nov 2024</span>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="contact">
+    <h2>Let's talk</h2>
+    <div class="contact-links">
+      <a href="mailto:souhaybhadi06@gmail.com">
+        <span class="label">Email</span>
+        souhaybhadi06@gmail.com
+      </a>
+      <a href="tel:+212639429294">
+        <span class="label">Phone</span>
+        (+212) 639 429 294
+      </a>
+      <a href="https://github.com/Souhayb120" target="_blank">
+        <span class="label">GitHub</span>
+        github.com/Souhayb120
+      </a>
+      <a href="https://linkedin.com" target="_blank">
+        <span class="label">LinkedIn</span>
+        linkedin.com/in/souhaybhadi
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    Built by Souhayb Hadi · 2026
+  </footer>
+
+<script src="styles/script.js"></script>
+
 </body>
-</html>   
+</html>

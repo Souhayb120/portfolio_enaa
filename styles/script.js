@@ -1,64 +1,63 @@
- const els = document.querySelectorAll('.fade-in');
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    els.forEach(el => obs.observe(el));
 
+ const form = document.getElementById('contactForm');
     function toggleMenu() {
       document.getElementById('nav-links').classList.toggle('open');
     }
+
     function closeMenu() {
       document.getElementById('nav-links').classList.remove('open');
     }
 
 
 
-    const form = document.getElementById('contactForm');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
 
-    function validateForm() {
-      let valid = true;
-      const name = document.getElementById('name');
-      const email = document.getElementById('email');
-      const message = document.getElementById('message');
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
 
-      [name, email, message].forEach(el => {
-        el.classList.remove('error');
-        document.getElementById(el.id + '-error').classList.remove('visible');
-      });
+  const nameError = document.getElementById('name-error');
+  const emailError = document.getElementById('email-error');
+  const messageError = document.getElementById('message-error');
+  const successBanner = document.getElementById('successBanner');
 
-      if (!name.value.trim()) {
-        name.classList.add('error');
-        document.getElementById('name-error').classList.add('visible');
-        valid = false;
-      }
+  nameError.style.display = 'none';
+  emailError.style.display = 'none';
+  messageError.style.display = 'none';
+  successBanner.style.display = 'none';
+  let isValid = true;
 
-      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRe.test(email.value.trim())) {
-        email.classList.add('error');
-        document.getElementById('email-error').classList.add('visible');
-        valid = false;
-      }
+  if (name === '') {
+    nameError.style.display = 'block'; 
+    isValid = false;                 
+  }
 
-      if (message.value.trim().length < 10) {
-        message.classList.add('error');
-        document.getElementById('message-error').classList.add('visible');
-        valid = false;
-      }
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    emailError.style.display = 'block';
+    isValid = false;
+  }
 
-      return valid;
-    }
+  if (message.length < 10) {
+    messageError.style.display = 'block';
+    isValid = false;
+  }
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      if (validateForm()) {
-        form.style.display = 'none';
-        document.getElementById('successBanner').classList.add('visible');
-      }
-    });
+  if (isValid) {
+    successBanner.style.display = 'block';
+    form.reset(); 
+  }
 
-    ['name', 'email', 'message'].forEach(id => {
-      document.getElementById(id).addEventListener('input', () => {
-        document.getElementById(id).classList.remove('error');
-        document.getElementById(id + '-error').classList.remove('visible');
-      });
-    });
+});
+
+
+
+
+
+//  const els = document.querySelectorAll('.fade-in');
+
+//  const obs = new IntersectionObserver(entries => {
+//       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+//     }, { threshold: 0.1 });
+//     els.forEach(el => obs.observe(el));

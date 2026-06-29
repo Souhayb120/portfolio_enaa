@@ -1,4 +1,9 @@
+ const els = document.querySelectorAll('.fade-in');
 
+ const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    els.forEach(el => obs.observe(el));
  const form = document.getElementById('contactForm');
     function toggleMenu() {
       document.getElementById('nav-links').classList.toggle('open');
@@ -7,7 +12,6 @@
     function closeMenu() {
       document.getElementById('nav-links').classList.remove('open');
     }
-
 
 
 form.addEventListener('submit', function (e) {
@@ -55,9 +59,16 @@ form.addEventListener('submit', function (e) {
 
 
 
-//  const els = document.querySelectorAll('.fade-in');
 
-//  const obs = new IntersectionObserver(entries => {
-//       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-//     }, { threshold: 0.1 });
-//     els.forEach(el => obs.observe(el));
+
+
+
+
+
+
+
+// const e = document.getElementById('email');
+// e.addEventListener('input', () => {
+//     console.log(e.value);
+// })
+
